@@ -1,7 +1,7 @@
 # House Rental Price Prediction Using Regression
 This project was assigned for completing Junior Data Scientist Course by [Narasio Data](https://narasiodata.com/)
 
-## Problem
+## Information
 The case study uses data containing: 
 
 the dependent variable (Y) = rent
@@ -15,7 +15,7 @@ the independent variable (X)
   * Maintenance_amt
   * Deposit_amt
 
-## Instruction
+## Problem
 * Determine the effect of variable X on variable Y
 * Analysis and prediction of house rental prices
 
