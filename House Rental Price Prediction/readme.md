@@ -3,7 +3,9 @@ This project was assigned for completing Junior Data Scientist Course by [Narasi
 
 ## Problem
 The case study uses data containing: 
+
 the dependent variable (Y) = rent
+
 the independent variable (X)
   * Bedroom
   * Bathrooms
