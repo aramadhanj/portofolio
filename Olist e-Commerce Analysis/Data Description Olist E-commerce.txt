@@ -1,0 +1,63 @@
+1. Dataset Publik E-Commerce Brasil oleh Olist
+
+  Dataset ini adalah kumpulan data publik e-commerse Brasil dari pesanan yang dibuat di Olist Store. Dataset ini memiliki informasi 25k pesanan dari 2016 hingga 2018 yang dibuat di beberapa pasar di Brasil. Fitur-fiturnya memungkinkan melihat pesanan dari berbagai aspek : dari status pesanan, harga, kinerja pembayaran dan pengiriman, lokasi pelanggan, atribut produk, dan reviews yang ditulis oleh pelanggan.
+
+2. Konteks
+Dataset ini disediakan dengan murah hati oleh Olist, department store terbesar di pasar Brasil. Olist menghubungkan bisnis kecil dari seluruh Brasil ke saluran tanpa kerumitan dan dengan satu kontrak. Pedagang tersebut dapat menjual produk mereka melalui Toko Olist dan mengirimkannya langsung ke pelanggan menggunakan mitra logistik Olist. Lebih detailnya ada di situs web : www.olist.com
+
+Setelah pelanggan membeli produk dari Olist Store, penjual akan diberitahu untuk memenuhi pesanan itu. Setelah pelanggan menerima produk, atau perkiraan tanggal pengiriman jatuh tempo, pelanggan mendapatkan survei kepuasan melalui email di mana ia dapat memberikan catatan untuk pengalaman pembelian dan menuliskan beberapa komentar.
+
+# Data Orders
+- order_id : identitas unik pesanan
+- customer_id : key ke dataset customer. Setiap pesanan memiliki customer_id yang unik.
+- order_status : Referensi status pesanan (delivered, shipped, etc).
+- order_purchase_timestamp : Menunjukkan waktu pembelian
+- order_approved_at : Menunjukkan waktu persetujuan pembayaran
+- order_delivered_carrier_date : Menunjukkan waktu posting pesanan. Saat itu ditangani ke mitra logistik.
+- order_delivered_customer_date : Menunjukkan tanggal pengiriman pesanan yang sebenarnya kepada customer.
+- order_estimated_delivery_date : Menunjukkan perkiraan tanggal pengiriman yang diinformasikan kepada customer pada saat pembelian.
+- order_item_id : Nomor urut yang mengidentifikasi jumlah item termasuk dalam pesanan yang sama.
+- product_id : identitas unik produk
+- seller_id : identitas unik seller
+- shipping_limit_date : Menunjukkan tanggal batas pengiriman penjual untuk menangani pesanan ke mitra logistik.
+- price : harga barang
+- freight_value : menunjukkan freight value item (jika pesanan memiliki lebih dari satu item, maka freight value dilakukan split antara tiap item)
+- payment_sequential : customer dapat membayar pesanan dengan lebih dari satu metode pembayaran. Jika dia melakukannya, urutan akan dibuat untuk mengakomodasi semua pembayaran.
+- payment_type : metode pembayaran yang dipilih oleh customer.
+- payment_installments : jumlah angsuran yang dipilih oleh pelanggan.
+- payment_value : nilai transaksi
+- review_id : identitas unik review 
+- review_score : Catatan mulai dari angka 1 hingga 5 yang diberikan oleh pelanggan pada survei kepuasan.
+- review_comment_title : Judul komentar dari ulasan yang ditinggalkan oleh customer, dalam bahasa Portugis.
+- review_comment_message : Pesan komentar dari ulasan yang ditinggalkan oleh customer, dalam bahasa Portugis.
+- review_creation_date : Menunjukkan tanggal pengiriman survei kepuasan kepada customer.
+- review_answer_timestamp : Menunjukkan waktu jawaban survei kepuasan.
+
+# Data Products
+- product_id : identitas unik produk
+- product_category_name : nama kategori dalam bahasa Inggris
+- product_name_lenght : jumlah karakter yang diekstraksi dari nama produk.
+- product_description_lenght : jumlah karakter yang diekstraksi dari deskripsi produk.
+- product_photos_qty : jumlah foto produk yang dipublikasikan
+- product_weight_g : berat produk diukur dalam (gram).
+- product_length_cm : panjang produk diukur dalam (cm).
+- product_height_cm : tinggi produk diukur dalam (cm).
+- product_width_cm : lebar produk diukur dalam (cm).
+
+# Data Customers
+- customer_id : key untuk dataset customer. Setiap pesanan memiliki customer_id yang unik.
+- customer_unique_id : identitas unik customer
+- zip_code_prefix : 5 digit pertama kode pos customer
+- customer_city : nama kota pelanggan
+- customer_state : negara customer
+
+# Data Sellers
+- seller_id : identitas unik seller
+- seller_zip_code_prefix : 5 digit pertama kode pos penjual
+- seller_city : nama kota seller
+- seller_state : nama negara seller
+
+# Data Geolocation
+- geolocation_zip_code_prefix : 5 digit pertama kode pos lokasi
+- geolocation_lat : latitude
+- geolocation_lng : longitude
